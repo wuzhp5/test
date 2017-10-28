@@ -1,0 +1,12 @@
+package nc.java.client;
+
+import nc.impl.mes.ws.serivce.UploadBillWSServiceImpl;
+import nc.vo.pub.BusinessException;
+
+public class JavaClient_01 {
+
+	public static void main(String[] args) throws BusinessException {
+		String res = new UploadBillWSServiceImpl().uploadBill("farplan", "121");
+		System.out.println(res);
+	}
+}

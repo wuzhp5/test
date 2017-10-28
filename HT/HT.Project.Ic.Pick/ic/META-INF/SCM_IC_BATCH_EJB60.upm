@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+	<public>   
+	    
+	    <!--批次号检查-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.batch.IBatchCheck</interface>
+	      <implementation>nc.impl.ic.batch.BatchCheckImpl</implementation>
+	    </component>
+	    <!--批次号生成-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.batch.IBatchGenerate</interface>
+	      <implementation>nc.impl.ic.batch.BatchGenerateImpl</implementation>
+	    </component>
+	    <!--批次参照查询-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.batch.IBatchRefQuery</interface>
+	      <implementation>nc.impl.ic.batch.BatchRefQueryImpl</implementation>
+	    </component>	    	    
+	    <!--批次号档案对外提供服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.scmf.ic.mbatchcode.IBatchcodePubService</interface>
+	      <implementation>nc.pubimpl.scmf.ic.mbatchcode.BatchcodePubServiceImpl</implementation>
+	    </component>	    
+	    <!-- 采购的生成批次号服务 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.batch.IBatchGenerateForPU</interface>
+	      <implementation>nc.impl.ic.batch.BatchGenerateForPUImpl</implementation>
+	    </component>
+	     <!-- 物料批次号规则公共服务 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.scmf.ic.batchcoderule.IBatchcodeRulePubService</interface>
+	      <implementation>nc.pubimpl.scmf.ic.batchcoderule.BatchcodeRulePubServiceImpl</implementation>
+	    </component>
+	    <!-- 生产查询批次号服务 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.scmf.ic.mbatchcode.mmpac.IBatchCodeQuery</interface>
+	      <implementation>nc.pubimpl.scmf.ic.mbatchcode.mmpac.BatchCodeQueryImpl</implementation>
+	    </component>
+	    <!-- 生产报告创建批次档案服务 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.scmf.ic.mbatchcode.mmpac.IBatchGenerateForMMPAC</interface>
+	      <implementation>nc.pubimpl.scmf.ic.mbatchcode.mmpac.BatchGenerateForMMPACImpl</implementation>
+	    </component>
+	    <!-- 首次入库日期升级服务 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.batch.upgrade.IBatchUpgrade</interface>
+	      <implementation>nc.impl.ic.batch.upgrade.BatchUpgradeImpl</implementation>
+	    </component>
+	</public>
+</module>

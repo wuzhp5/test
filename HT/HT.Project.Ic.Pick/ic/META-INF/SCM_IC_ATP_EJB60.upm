@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+  	<public>
+  			<!--ATP查询-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.atp.IAtpQuery</interface>
+	      	<implementation>nc.pubimpl.ic.atp.service.AtpQueryImpl</implementation>
+	     </component>	    
+	     
+	    	<!--ATP更新-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.atp.ATPUpdate</interface>
+	      	<implementation>nc.pubimpl.ic.atp.service.ATPUpdateImpl</implementation>
+	     </component>	 
+	     
+	     <!--ATP修复和压缩-->
+	      <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.atp.IAtpAdjust</interface>
+	      	<implementation>nc.pubimpl.ic.atp.service.AtpAdjustImpl</implementation>
+	     </component>	 
+	      <!--ATP升级-->
+	      <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.atp.IAtpUpgrade</interface>
+	      	<implementation>nc.impl.ic.atp.AtpUpgradeImpl</implementation>
+	     </component>	
+	     
+	     	<!--ATP为KMD提供的查询服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.atp.mmdp.IAtpQueryForKMD</interface>
+	      	<implementation>nc.pubimpl.ic.atp.service.mmdp.AtpQueryForKMDImpl</implementation>
+	     </component>	
+	     	<!--ATP为移动应用提供的查询服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.atp.mobileapp.IAtpQueryForMobileApp</interface>
+	      	<implementation>nc.pubimpl.ic.atp.service.mobileapp.AtpQueryForMobileAppImpl</implementation>
+	     </component>	
+	    	<!--电子销售对可用量的接口-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.atp.eso.IATPQueryForESO</interface>
+	      	<implementation>nc.pubimpl.ic.atp.service.eso.ATPQueryForESOImpl</implementation>
+	     </component>	
+	     
+	     <!--ATP V63升级接口-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.atp.upgrade.IAtpUpgradeV63</interface>
+	      	<implementation>nc.impl.ic.atp.upgrade.AtpUpgradeV63Impl</implementation>
+	     </component>
+	     <!--ATP为服装行业提供的查询服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.atp.IAtpQryForFZ</interface>
+	      	<implementation>nc.pubimpl.ic.atp.service.AtpQryForFZImpl</implementation>
+	     </component> 
+  	</public>
+</module>

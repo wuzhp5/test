@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module>
+	<public>
+		<component remote="true">
+			<interface>nc.itf.pubbill.ws.IPubBillWS</interface>
+			<implementation>nc.impl.pubbill.ws.PubBillWSImpl</implementation>
+			<extension class="nc.uap.ws.deploy.OxbWSExtensionProcessor">
+				<wsdl>/nc/itf/pubbill/ws/IPubBillWS.wsdl</wsdl>
+				<address>/nc.itf.pubbill.ws.IPubBillWS</address>
+			</extension>
+		</component>
+		<component remote="true">
+			<interface>nc.itf.pubbill.ws.IQueryWS</interface>
+			<implementation>nc.impl.pubbill.ws.QueryWSImpl</implementation>
+			<extension class="nc.uap.ws.deploy.OxbWSExtensionProcessor">
+				<wsdl>/nc/itf/pubbill/ws/IQueryWS.wsdl</wsdl>
+				<address>/nc.itf.pubbill.ws.IQueryWS</address>
+			</extension>
+		</component>
+	</public>
+	<private>
+	</private>
+</module>

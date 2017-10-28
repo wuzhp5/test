@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+	<public>
+		<!-- 调拨出库查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4y.ITransOutQuery</interface>
+			<implementation>nc.impl.ic.m4y.TransOutQueryImpl</implementation>
+		</component>
+		<!-- 调拨入,签收途损参照调拨出库查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4y.ITransOutRefQuery</interface>
+			<implementation>nc.pubimpl.ic.m4y.TransOutRefQueryImpl</implementation>
+		</component>
+		<!--调拨出库单维护-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4y.ITransOutMaintain</interface>
+			<implementation>nc.impl.ic.m4y.TransOutMaintainImpl</implementation>
+		</component>
+
+		<!--普通出库单维护-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4i.IGeneralOutMaintain</interface>
+			<implementation>nc.impl.ic.m4i.GeneralOutMaintainImpl</implementation>
+		</component>
+		<!--普通出库单查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4i.IGeneralOutQuery</interface>
+			<implementation>nc.impl.ic.m4i.GeneralOutQueryImpl</implementation>
+		</component>
+		<!--普通出库单提供给特殊单的服务 -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4i.IGeneralOutServiceForSpecial</interface>
+			<implementation>nc.pubimpl.ic.m4i.GeneralOutServiceForSpecialImpl</implementation>
+		</component>
+		<!--普通出库单提供给出库申请单的服务 -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4i.m4455.IGeneralOutServiceFor4455</interface>
+			<implementation>nc.pubimpl.ic.m4i.m4455.GeneralOutServiceFor4455Impl</implementation>
+		</component>
+
+		<!--销售出库库单维护-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4c.self.ISaleOutMaintain</interface>
+			<implementation>nc.impl.ic.m4c.SaleOutMaintainImpl</implementation>
+		</component>
+		<!--销售出库库单查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4c.self.ISaleOutQuery</interface>
+			<implementation>nc.impl.ic.m4c.SaleOutQueryImpl</implementation>
+		</component>
+		<!--销售出库库单提供回写途损接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m4453.IRewrite4CFor4453</interface>
+			<implementation>nc.pubimpl.ic.m4c.m4453.Rewrite4CFor4453Impl</implementation>
+		</component>
+		<!--销售出库库单推式保存接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.ISaleOutPushSave</interface>
+			<implementation>nc.pubimpl.ic.m4c.SaleOutPushSaveImpl</implementation>
+		</component>
+
+		<!--调拨出库单提供给调拨入库单回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4y.m4e.IRewrite4YFor4E</interface>
+			<implementation>nc.pubimpl.ic.m4y.m4e.Rewrite4YFor4EImpl</implementation>
+		</component>
+		<!--调拨出库单提供给transbusiinfo单回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>
+				nc.pubitf.ic.m4y.transbusiinfo.ITransOutQueryForTransbusiinfo
+			</interface>
+			<implementation>
+				nc.pubimpl.ic.m4y.transbusiinfo.TransOutQueryForTransbusiinfoImpl
+			</implementation>
+		</component>
+		<!-- 销售出库单为销售发票提供的回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m32.IRewrite4CFor32</interface>
+			<implementation>nc.pubimpl.ic.m4c.m32.Rewrite4CFor32Impl</implementation>
+		</component>
+
+		<!-- 销售出库单为运输单提供的回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m4804.IRewrite4CFor4804</interface>
+			<implementation>nc.pubimpl.ic.m4c.m4804.Rewrite4CFor4804Impl</implementation>
+		</component>
+
+		<!--资产出库单维护-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4451.IAssetOutMaintain</interface>
+			<implementation>nc.impl.ic.m4451.AssetOutMaintainImpl</implementation>
+		</component>
+
+		<!--资产出库单查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4451.IAssetOutQuery</interface>
+			<implementation>nc.impl.ic.m4451.AssetOutQueryImpl</implementation>
+		</component>
+
+		<!--材料出库维护-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4d.IMaterialOutMaintain</interface>
+			<implementation>nc.impl.ic.m4d.MaterialOutMaintainImpl</implementation>
+		</component>
+		<!--材料出库单查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4d.IMaterialOutQuery</interface>
+			<implementation>nc.impl.ic.m4d.MaterialOutQueryImpl</implementation>
+		</component>
+		<!--材料出库单提供给质证书查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.IMaterialOutRefQuery</interface>
+			<implementation>nc.pubimpl.ic.m4d.MaterialOutRefQueryImpl</implementation>
+		</component>
+		<!--材料出库提供出库申请单服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m4455.IMaterialQueryServiceFor4455</interface>
+			<implementation>nc.pubimpl.ic.m4d.m4455.MaterialOutServiceFor4455</implementation>
+		</component>
+		<!--材料出库提供工单服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m4b36.IMaterialOutServiceFor4B36</interface>
+			<implementation>nc.pubimpl.ic.m4d.m4b36.MaterialOutServiceFor4B36Impl</implementation>
+		</component>
+		<!--材料出库提供工单关联服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.ewm.IMaterialOutServiceForEWM</interface>
+			<implementation>nc.pubimpl.ic.m4d.ewm.MaterialOutServiceForEWMImpl</implementation>
+		</component>
+		<!--材料出库提供交接单服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m55aa.IMaterialOutServiceFor55AA</interface>
+			<implementation>nc.pubimpl.ic.m4d.m55aa.MaterialOutImplFor55AA</implementation>
+		</component>
+		<!-- 备料计划推式生成材料出库  -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.mm55a3.IMaterialOuterviceFor55A3</interface>
+			<implementation>nc.pubimpl.ic.m4d.mm55a3.MaterialOuterviceFor55A3</implementation>
+		</component>
+		<!--  生产报告倒冲生成材料出库  -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m55a4.IMaterialOutServiceFor55A4</interface>
+			<implementation>nc.pubimpl.ic.m4d.m55a4.MaterialOutImplFor55A4</implementation>
+		</component>
+		<!--材料出库提供给采购接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.pu.IMaterialOutForPU</interface>
+			<implementation>nc.pubimpl.ic.m4d.pu.MaterialOutForPUImpl</implementation>
+		</component>
+		<!--借出单维护-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4h.IBorrowOutMaintain</interface>
+			<implementation>nc.impl.ic.m4h.BorrowOutMaintainImpl</implementation>
+		</component>
+		<!--借出单查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4h.IBorrowOutQuery</interface>
+			<implementation>nc.impl.ic.m4h.BorrowOutQueryImpl</implementation>
+		</component>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4h.m30.IBorrowOutRefQuery</interface>
+			<implementation>nc.pubimpl.ic.m4h.m30.BorrowOutRefQueryImpl</implementation>
+		</component>
+		<!--借出单回写服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4h.m4b.IBorrowOutRewriteFor4B</interface>
+			<implementation>nc.pubimpl.ic.m4h.m4b.BorrowOutRewriteFor4BImpl</implementation>
+		</component>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4h.m30.IBorrowOutRewriteFor30</interface>
+			<implementation>nc.pubimpl.ic.m4h.m30.BorrowOutRewriteFor30Impl</implementation>
+		</component>
+		<!--借出单提借出库申请单-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4h.m4455.IBorrowOutQueryFor4455</interface>
+			<implementation>nc.pubimpl.ic.m4h.m4455.BorrowOutQueryFor4455Impl</implementation>
+		</component>
+
+		<!--废品处理出库单维护-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4p.IWasterProcessMaintain</interface>
+			<implementation>nc.impl.ic.m4p.WasterProcessMaintainImpl</implementation>
+		</component>
+		<!--废品处理出库单查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4p.IWasterProcessQuery</interface>
+			<implementation>nc.impl.ic.m4p.WasterProcessQueryImpl</implementation>
+		</component>
+		<!--报废出库单维护-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4o.IDiscardOutMaintain</interface>
+			<implementation>nc.impl.ic.m4o.DiscardOutMaintainImpl</implementation>
+		</component>
+		<!--报废出库单查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4o.IDiscardOutQuery</interface>
+			<implementation>nc.impl.ic.m4o.DiscardOutQueryImpl</implementation>
+		</component>
+		<!--报废出库单提供给出库申请单查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4o.m4455.IDiscardOutQueryFor4455</interface>
+			<implementation>nc.pubimpl.ic.m4o.m4455.DiscardOutQueryFor4455Impl</implementation>
+		</component>
+		<!--借入还回单查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4j.IReturnOutQuery</interface>
+			<implementation>nc.impl.ic.m4j.ReturnOutQueryImpl</implementation>
+		</component>
+		<!--借入还回单维护-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4j.IReturnOutMaintain</interface>
+			<implementation>nc.impl.ic.m4j.ReturnOutMaintainImpl</implementation>
+		</component>
+		<!--销售出库单提供的转单查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.ISaleOutRefQuery</interface>
+			<implementation>nc.pubimpl.ic.m4c.SaleOutRefQueryImpl</implementation>
+		</component>
+		<!--销售出库单为销售提供的通用查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.I4CQueryPubService</interface>
+			<implementation>nc.pubimpl.ic.m4c.I4CQueryPubServiceImpl</implementation>
+		</component>
+		<!--调拨出库提供给签收途损的回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4y.m4453.IRewrite4YFor4453</interface>
+			<implementation>nc.pubimpl.ic.m4y.m4453.Rewrite4YFor4453Impl</implementation>
+		</component>
+		<!--蓝字调拨出库单提供给红字调拨出库单的回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4y.red4y.IRewriteBlue4YForRed4Y</interface>
+			<implementation>nc.pubimpl.ic.m4y.red4y.RewriteBlue4YForRed4YImpl</implementation>
+		</component>
+		<!--销售出库提供给签收途损来源查询、推单保存接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m4453.ISaleOutServiceFor4453</interface>
+			<implementation>nc.pubimpl.ic.m4c.m4453.SaleOutServiceFor4453Impl</implementation>
+		</component>
+		<!--销售出库提供给销售发票查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m32.IQuery4CFor32</interface>
+			<implementation>nc.pubimpl.ic.m4c.m32.Query4CFor32Impl</implementation>
+		</component>
+		<!--拣货单参照出库查询的接口实现-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4v.IRefBillForPickBill</interface>
+			<implementation>nc.impl.ic.m4v.RefBillForPickBillImpl</implementation>
+		</component>
+		<!--拣货单提供给装箱单的查询接口实现-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4v.m4w.IPickBillRefQuery</interface>
+			<implementation>nc.pubimpl.ic.m4v.m4w.PickBillRefQueryImpl</implementation>
+		</component>
+		<!--拣货单提供给装箱单的回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4v.m4w.IRewrite4VFor4W</interface>
+			<implementation>nc.pubimpl.ic.m4v.m4w.Rewrite4VFor4WImpl</implementation>
+		</component>
+		<!--拣货单查询的接口实现-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4v.IPickBillQuery</interface>
+			<implementation>nc.impl.ic.m4v.PickBillQueryImpl</implementation>
+		</component>
+		<!--拣货单维护的接口实现-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4v.IPickBillMaintain</interface>
+			<implementation>nc.impl.ic.m4v.PickBillMaintainImpl</implementation>
+		</component>
+
+		<!--调拨出库提供给签收途损来源查询、推单保存接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4y.m4453.ITransOutServiceFor4453</interface>
+			<implementation>nc.pubimpl.ic.m4y.m4453.TransOutServiceFor4453Impl</implementation>
+		</component>
+		<!--拣货单提供给出库单检查是否被引用的接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4v.IPickBillPubService</interface>
+			<implementation>nc.pubimpl.ic.m4v.PickBillPubServiceImpl</implementation>
+		</component>
+		<!--提供给销售结算接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m33.ISaleOutQueryFor33</interface>
+			<implementation>nc.pubimpl.ic.m4c.m33.SaleOutQueryFor33Impl</implementation>
+		</component>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m33.IRewrite4CFor33</interface>
+			<implementation>nc.pubimpl.ic.m4c.m33.Rewrite4CFor33Impl</implementation>
+		</component>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4y.m33.ITransOutQueryFor33</interface>
+			<implementation>nc.pubimpl.ic.m4y.m33.TransOutQueryFor33Impl</implementation>
+		</component>
+		<!-- 装箱单查询接口  -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4w.IPackBillQuery</interface>
+			<implementation>nc.impl.ic.m4w.PackBillQueryImpl</implementation>
+		</component>
+		<!-- 装箱单维护接口  -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4w.IPackBillMaintain</interface>
+			<implementation>nc.impl.ic.m4w.PackBillMaintainImpl</implementation>
+		</component>
+
+		<!-- 为委外材料核销推式生成材料出库提供接口  -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m47.IMaterialOutServiceFor47</interface>
+			<implementation>nc.pubimpl.ic.m4d.m47.MaterialOutServiceFor47</implementation>
+		</component>
+
+		<!-- 出库申请单维护接口  -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4455.self.ISapplyBillMaintain</interface>
+			<implementation>nc.impl.ic.m4455.SapplyBillMaintainImpl</implementation>
+		</component>
+
+		<!-- 出库申请单批审流接口  -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4455.self.ISapplyBillApprove</interface>
+			<implementation>nc.impl.ic.m4455.SapplyBillApproveImpl</implementation>
+		</component>
+
+		<!-- 出库申请单查询接口  -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4455.self.ISapplyBillQuery</interface>
+			<implementation>nc.impl.ic.m4455.SapplyBillQueryImpl</implementation>
+		</component>
+
+		<!--出库申请单提供给出库单查詢接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4455.ISapplyBillQueryForOutBill</interface>
+			<implementation>nc.pubimpl.ic.m4455.SapplyBillQueryForOutBillImpl</implementation>
+		</component>
+
+		<!--出库申请单提供给出库单回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4455.IRewriteFor4455</interface>
+			<implementation>nc.pubimpl.ic.m4455.RewriteFor4455Impl</implementation>
+		</component>
+
+
+
+		<!-- 调拨出库单为运输单提供的回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4y.m4804.IRewrite4YFor4804</interface>
+			<implementation>nc.pubimpl.ic.m4y.m4804.Rewrite4YFor4804Impl</implementation>
+		</component>
+
+		<!-- 材料出库单为周转材提供接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.rm.IMaterialOutServiceForRM</interface>
+			<implementation>nc.pubimpl.ic.m4d.rm.MaterialOutServiceForRM</implementation>
+		</component>
+		<!-- 材料出库单为生产订单提供接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m55a2.IMaterialOutServiceFor55A2</interface>
+			<implementation>nc.pubimpl.ic.m4d.m55a2.MaterialOutServiceFor55A2Impl</implementation>
+		</component>
+
+		<!-- 其他出库单为周转材提供接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4i.rm.IGeneralOutServiceForRM</interface>
+			<implementation>nc.pubimpl.ic.m4i.rm.GeneralOutServiceForRMImpl</implementation>
+		</component>
+		
+		<!--其他出库单提供的转单查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4i.IGeneralOutRefQuery</interface>
+			<implementation>nc.pubimpl.ic.m4i.GeneralOutRefQueryImpl</implementation>
+		</component>
+			
+		<!-- 其他出库单为运输单提供的回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4i.m4804.IRewrite4IFor4804</interface>
+			<implementation>nc.pubimpl.ic.m4i.m4804.Rewrite4IFor4804Impl</implementation>
+		</component>
+			
+		<!-- 调拨出库单为运输状态查询提供的更新运输关闭接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4y.m4804.I4YDeliveryStatusOperater</interface>
+			<implementation>nc.pubimpl.ic.m4y.m4804.M4YDeliveryStatusOperaterImpl</implementation>
+		</component>
+		<!-- 销售出库单为运输状态查询提供的更新运输关闭接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m4804.I4CDeliveryStatusOperater</interface>
+			<implementation>nc.pubimpl.ic.m4c.m4804.M4CDeliveryStatusOperaterImpl</implementation>
+		</component>
+		
+		<!-- 销售出库单为采购入库单协同提供回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m45.IRewrite4CFor45</interface>
+			<implementation>nc.pubimpl.ic.m4c.m45.Rewrite4CFor45Impl</implementation>
+		</component>
+
+		<!-- 销售出库单为销售成本结转提供回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.mi5.IRewrite4CForI5</interface>
+			<implementation>nc.pubimpl.ic.m4c.mi5.Rewrite4CForI5Impl</implementation>
+		</component>
+
+		<!-- 销售出库单为销售订单修订提供回写成本接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m30.IRewrite4CPriceFor30</interface>
+			<implementation>nc.pubimpl.ic.m4c.m30.Rewrite4CPriceFor30Impl</implementation>
+		</component>
+
+		<!-- 销售出库单为销售结算修订提供回写单价接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m33.IRewrite4CPriceFor33</interface>
+			<implementation>nc.pubimpl.ic.m4c.m33.Rewrite4CPriceFor33Impl</implementation>
+		</component>
+
+		<!-- 销售出库单为销售结算修改成本单价提供回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m33.IRewrite4CCostPriceFor33</interface>
+			<implementation>nc.pubimpl.ic.m4c.m33.Rewrite4CCostPriceFor33Impl</implementation>
+		</component>
+
+		<!-- 销售出库单为销售订单提供回写累计退货数量接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m30.IRewrite4CFor30</interface>
+			<implementation>nc.pubimpl.ic.m4c.m30.Rewrite4CFor30Impl</implementation>
+		</component>
+
+		<!-- 材料出库为生产作务批次关联回写、查询提供接口 From NC61 JINJYA 2011-12-21 -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.mbatchbind.IMaterialOutServiceForMBatchBind</interface>
+			<implementation>
+				nc.pubimpl.ic.m4d.mbatchbind.MaterialOutServiceForMBatchBindImpl
+			</implementation>
+		</component>
+
+		<!-- 销售出库为电子采购提供的服务接口 -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.es.ISaleOutQryForES</interface>
+			<implementation>nc.pubimpl.ic.m4c.es.SaleOutQryForESImpl</implementation>
+		</component>
+		<!--销售出库升级-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4c.upgrade.ISaleOutUpgradeToV61</interface>
+			<implementation>nc.impl.ic.m4c.upgrade.SaleOutUpgradeToV61Impl</implementation>
+		</component>
+
+		<!-- 材料出库为项目管理提供的服务接口 -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.pm.IMaterialQueryServiceForPM</interface>
+			<implementation>nc.pubimpl.ic.m4d.pm.MaterialQueryServiceForPMImpl</implementation>
+		</component>
+		<!-- 出库申请为项目管理提供的服务接口 -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4455.pm.ISapplyBillServiceForPM</interface>
+			<implementation>nc.pubimpl.ic.m4455.pm.SapplyBillServiceForPMImpl</implementation>
+		</component>
+		<!-- 出库申请为项目管理提供的服务接口 -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m4d81.IMaterialOutServiceFor4D81</interface>
+			<implementation>nc.pubimpl.ic.m4d.m4d81.MaterialOutImplFor4D81</implementation>
+		</component>
+		<!--借出单升级-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4h.upgrade.IBorrowOutUpgradeToV61</interface>
+			<implementation>nc.impl.ic.m4h.upgrade.BorrowOutUpgradeToV61Impl</implementation>
+		</component>
+		<!--材料出库为备料计划升级提供服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.upgrade.IMaterialOutForMMUpgrade</interface>
+			<implementation>nc.pubimpl.ic.m4d.upgrade.MaterialOutForMMUpgradeImpl</implementation>
+		</component>
+		<!--调拨出库单为销售提供的通用查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4y.I4YQueryPubService</interface>
+			<implementation>nc.pubimpl.ic.m4y.I4YQueryPubServiceImpl</implementation>
+		</component>
+		<!--出库申请单为备料计划提供服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4455.mm55a3.ISapplyBillServiceFor55A3</interface>
+			<implementation>nc.pubimpl.ic.m4455.mm55a3.SapplyBillServiceImplFor55A3</implementation>
+		</component>
+		<!--材料出库单升级-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4d.upgrade.IMaterialOutUpgrade</interface>
+			<implementation>nc.impl.ic.m4d.upgrade.MaterialOutUpgradeImpl</implementation>
+		</component>
+		<!--销售出库单为分销渠道提供查询服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.dcm.ISaleOutForDCMQuery</interface>
+			<implementation>nc.pubimpl.ic.m4c.dcm.SaleOutForDCMQueryImpl</implementation>
+		</component>
+		<!--销售出库单为销售返利提供查询服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.sr.formula.ic.saleout.ISaleOutSRFormula</interface>
+			<implementation>nc.pubimpl.ic.m4c.sr.SaleOutSRFormulaImpl</implementation>
+		</component>
+		<!--材料出库单为工序完工报告提供的推式保存接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m55d2.IMaterialOutServiceFor55D2</interface>
+			<implementation>nc.pubimpl.ic.m4d.m55d2.MaterialOutImplFor55D2</implementation>
+		</component>
+		<!--销售出库单升级63-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4c.upgrade.ISaleOutUpgradeToV63</interface>
+			<implementation>nc.impl.ic.m4c.upgrade.SaleOutUpgradeToV63Impl</implementation>
+		</component>
+		<!--调拨出库单升级63-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.m4y.upgrade.ITransOutUpgradeToV63</interface>
+			<implementation>nc.impl.ic.m4y.upgrade.TransOutUpgradeToV63Impl</implementation>
+		</component>
+		<!--调拨入库单为"供需预订维护"节点提供的单据追溯接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4e.mmpps.IBillTrace4e</interface>
+			<implementation>nc.pubimpl.ic.m4e.mmpps.BillTrace4eImpl</implementation>
+		</component>
+		<!--调拨入库单提供给“供需预定维护”的查询供给接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4e.mmpps.ISupplyGetter4e</interface>
+			<implementation>nc.pubimpl.ic.m4e.mmpps.SupplyGetter4eImpl</implementation>
+		</component>
+		<!--材料出库单提供给“盘点单”的维护接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m4r.IMaterialOutServiceFor4R</interface>
+			<implementation>nc.pubimpl.ic.m4d.m4r.MaterialOutServiceFor4R</implementation>
+		</component>
+		<!--材料出库单提供给“盘点单”的查询接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m4r.IMaterialOutServiceForSpecial</interface>
+			<implementation>nc.pubimpl.ic.m4d.m4r.MaterialOutServiceForSpecialImpl</implementation>
+		</component>
+		<!-- 销售出库为CRM提供的查询接口 -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.crm.ISaleOutForCRMQuery</interface>
+			<implementation>nc.pubimpl.ic.m4c.crm.SaleOutForCRMQueryImpl</implementation>
+		</component>
+		<!-- 收货单推式生成材料出库  -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m55e5.IMaterialOuterviceFor55E5</interface>
+			<implementation>nc.pubimpl.ic.m4d.mm55e5.MaterialOuterviceFor55E5</implementation>
+		</component>
+		<!--销售出库单为出口管理提供的操作销售出库单接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m5730.IM4CBillOperaterFor5730</interface>
+			<implementation>nc.pubimpl.ic.m4c.m5730.M4CBillOperaterFor5730Impl</implementation>
+		</component>
+		<!--销售出库单为转口管理提供的操作销售出库单接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4c.m6030.IM4CBillOperaterFor6030</interface>
+			<implementation>nc.pubimpl.ic.m4c.m6030.M4CBillOperaterFor6030Impl</implementation>
+		</component>
+		
+		<!--出库单提供消耗汇总审批询价回写接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.outbound.IRewriteFor50Approve</interface>
+			<implementation>nc.pubimpl.ic.outbound.RewriteFor50ApproveImpl</implementation>
+		</component>
+		<!--材料出库单为物资需求申请单提供查询服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4d.m422x.IMaterialQueryServiceFor422X</interface>
+			<implementation>nc.pubimpl.ic.m4d.m422x.MaterialQueryServiceFor422XImpl</implementation>
+		</component>		
+	</public>
+</module>

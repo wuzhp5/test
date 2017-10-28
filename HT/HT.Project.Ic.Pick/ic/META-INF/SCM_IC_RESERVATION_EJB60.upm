@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+	<public>
+		<!--预留维护查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.reserve.IReserveMaintenance</interface>
+			<implementation>nc.impl.ic.reserve.action.ReserveMaintenanceImpl</implementation>
+		</component>
+
+		<!--单据预留查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.reserve.IReserveAssist</interface>
+			<implementation>nc.impl.ic.reserve.service.ReserveAssistImpl</implementation>
+		</component>
+
+		<!--单据预留调整-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.reserve.ReserveAdjust</interface>
+			<implementation>nc.impl.ic.reserve.service.ReserveAdjustImpl</implementation>
+		</component>
+
+		<!--自动预留-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.reserve.AutoReserve</interface>
+			<implementation>nc.impl.ic.reserve.service.AutoReserveImpl</implementation>
+		</component>
+
+		<!--预留出入库-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.reserve.ReserveInOut</interface>
+			<implementation>nc.impl.ic.reserve.service.ReserveInOutImpl</implementation>
+		</component>
+
+		<!--预留供给单据处理-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.reserve.SupplyBillOperator</interface>
+			<implementation>nc.impl.ic.reserve.service.SupplySourceOperatorImpl</implementation>
+		</component>
+
+		<!--提供其它组件查询预留数据-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.reserve.ReserveQueryServer</interface>
+			<implementation>nc.impl.ic.reserve.service.ReserveQueryServerImpl</implementation>
+		</component>
+		
+		<!--提供MPS的预留查询服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+           <interface>nc.pubitf.ic.reserve.mps.IReserveQuery</interface>
+           <implementation>nc.impl.ic.reserve.service.mps.ReserveQueryImpl</implementation>
+        </component>
+        
+        <!--预留V63升级服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+           <interface>nc.itf.ic.reserve.upgrade.IReserveUpgradeV63</interface>
+           <implementation>nc.impl.ic.reserve.upgrade.ReserveUpgradeV63Impl</implementation>
+        </component>
+	</public>
+</module>

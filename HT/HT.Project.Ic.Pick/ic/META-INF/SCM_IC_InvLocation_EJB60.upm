@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+	<public>
+	
+		<!--货位存放物料设置-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.mstorectl.IStorecltService</interface>
+	      <implementation>nc.impl.ic.mstoreclt.StorecltServiceImpl</implementation>
+	    </component>
+	    
+	    <!--货位存放物料设置查询服务-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.mstorectl.IStorecltQueryService</interface>
+	      <implementation>nc.pubimpl.ic.mstoreclt.StorecltQueryServiceImpl</implementation>
+	    </component>  
+
+	</public>
+</module>

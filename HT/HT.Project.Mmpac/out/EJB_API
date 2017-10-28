@@ -1,0 +1,4 @@
+物料清单（标准BOM）查询服务：nc.itf.bd.bom.bom0202.IBomBillQueryService
+物料清单（标准BOM）查询默认版本服务：nc.pubitf.bd.vermatch.dpac.IPubVermatchServiceForMo
+自动捡货服务：nc.itf.ic.onhand.OnhandResService
+

@@ -1,0 +1,22 @@
+[main] 2017/09/24 23:02:52 [anonymous] ERROR  - Detail Message: invalid url: null
+nc.bs.framework.exception.ComponentException: Detail Message: invalid url: null
+	at nc.bs.framework.rmi.RemoteContextStub.<init>(RemoteContextStub.java:73)
+	at nc.bs.framework.rmi.RmiNCLocator.init(RmiNCLocator.java:52)
+	at nc.bs.framework.common.NCLocator.getInstance(NCLocator.java:82)
+	at nc.bs.framework.common.NCLocator.getInstance(NCLocator.java:49)
+	at nc.ui.ml.NCLangRes.getAllLanguages(NCLangRes.java:41)
+	at nc.vo.ml.AbstractNCLangRes.getAllLanguagesAsHM(AbstractNCLangRes.java:41)
+	at nc.vo.ml.AbstractNCLangRes.getLanguage(AbstractNCLangRes.java:58)
+	at nc.vo.ml.LanguageTranslatorFactor.getTranslator(LanguageTranslatorFactor.java:71)
+	at nc.vo.ml.AbstractNCLangRes.getStringByPath(AbstractNCLangRes.java:98)
+	at nc.vo.ml.AbstractNCLangRes.getStrByID(AbstractNCLangRes.java:80)
+	at nc.ui.pub.beans.calendar.CalendarPanel.<init>(CalendarPanel.java:19)
+	at nc.ui.pub.beans.calendar.CalendarPanel.main(CalendarPanel.java:309)
+ 
+[main] 2017/09/24 23:02:52 [anonymous] DEBUG  - WARNING£ºAS having no assigned the language£¬return the default chinese language! 
+[main] 2017/09/24 23:02:52 [anonymous] DEBUG  - WARNING£ºAS having no assigned the language£¬return the default chinese language! 
+[main] 2017/09/24 23:02:52 [anonymous] DEBUG  - WARNING£ºAS having no assigned the language£¬return the default chinese language! 
+[main] 2017/09/24 23:02:52 [anonymous] DEBUG  - WARNING£ºAS having no assigned the language£¬return the default chinese language! 
+[main] 2017/09/24 23:02:52 [anonymous] DEBUG  - WARNING£ºAS having no assigned the language£¬return the default chinese language! 
+[main] 2017/09/24 23:02:52 [anonymous] DEBUG  - WARNING£ºAS having no assigned the language£¬return the default chinese language! 
+[main] 2017/09/24 23:02:52 [anonymous] DEBUG  - WARNING£ºAS having no assigned the language£¬return the default chinese language! 

@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- 引入通用配置 -->
+	<!-- extends nc/ui/ic/general/model/config/GeneralCommon.xml -->
+
+	<bean id="queryParams1" class="nc.ui.uif2.userdefitem.QueryParam">
+		<property name="mdfullname" value="ic.TransOutHeadVO" />
+	</bean>
+	<bean id="queryParams2" class="nc.ui.uif2.userdefitem.QueryParam">
+		<property name="mdfullname" value="ic.TransOutBodyVO" />
+	</bean>
+	<bean id="userQueryParams1" class="nc.ui.uif2.editor.UserdefQueryParam">
+		<property name="mdfullname" value="ic.TransOutHeadVO" />
+		<property name="pos" value="0" />
+		<property name="prefix" value="vdef" />
+	</bean>
+	<bean id="userQueryParams2" class="nc.ui.uif2.editor.UserdefQueryParam">
+		<property name="mdfullname" value="ic.TransOutBodyVO" />
+		<property name="pos" value="1" />
+		<property name="prefix" value="vbdef" />
+	</bean>
+
+   <!-- 注册分页 -->
+	<bean id="pageQuery" class="nc.ui.ic.general.model.ICGenRevisePageService">
+		<property name="voClassName" value="nc.vo.ic.m4y.entity.TransOutVO" />
+		<property name="billType" value="4y" />
+		
+	</bean>
+		<bean id="pageBar" class="nc.ui.uif2.components.pagination.PaginationBar" />
+	<bean id="pageDelegator"
+		class="nc.ui.pubapp.uif2app.actions.pagination.BillModelPaginationDelegator">
+		<constructor-arg ref="icBizModel" />
+		<property name="paginationQuery" ref="pageQuery" />
+	</bean>
+	<bean id="pageMediator" class="nc.ui.scmpub.page.model.SCMBillPageMediator"
+		init-method="init">
+		<property name="listView" ref="list" />
+		<property name="recordInPage" value="10" />
+		<property name="cachePages" value="10" />
+		<property name="pageDelegator" ref="pageDelegator" />
+	</bean>
+	<!-- 应用服务类，负责进行模型操作的处理 -->
+	<bean id="manageModelService" class="nc.ui.ic.m4y.model.TransOutModelService">
+		<!--<property name="icUIContext" ref="icUIContext"></property> <property 
+			name="voClass" value="nc.vo.ic.m4y.entity.TransOutVO" /> -->
+	</bean>
+	<!-- 管理应用模型 -->
+	<bean id="icBizModel" class="nc.ui.ic.general.model.ICGenBizModel">
+		<property name="service" ref="manageModelService" />
+		<property name="businessObjectAdapterFactory" ref="boadatorfactory" />
+		<property name="icUIContext" ref="icUIContext" />
+		<property name="billType" value="4Y" />
+		<!-- 启用权限控制 -->
+		<property name="powerValidate" value="true" />
+	</bean>
+	<!-- <bean id="cardLoadDataHandler" class="nc.ui.ic.m4y.handler.ICTransOutCardLoadDataEventHandler"> 
+		</bean> <bean id="listLoadDataEventHandler" class="nc.ui.ic.m4y.handler.ICTransOutListLoadDataEventHandler"> 
+		</bean> -->
+	<!-- 调拨出库单查询对话框初始化处理 -->
+	
+	<bean id="qryDLGInitializer" class="nc.ui.ic.m4y.deal.TransOutQueryDLGInitializer" >	
+		<property name="model" ref="icBizModel"/>
+	<!-- <property name="scmBatchRef" ref="scmBatchRef"/> -->
+	</bean>
+
+	<bean id="UIProcesorInfo" class="nc.ui.ic.m4y.deal.TransOutUIProcessorInfo" />
+	<!-- 仓库handler -->
+	<bean id="cwarehouseidHandler" class="nc.ui.ic.m4y.handler.TransOutCwarehouseidHandler" />
+	<bean id="cothercalbodyoidHandlerFor4Y" class="nc.ui.ic.m4y.handler.CothercalbodyoidHandler" />
+	<bean id="cotherwhidHandlerFor4Y" class="nc.ui.ic.m4y.handler.CotherwarehouseidHandler" />
+	<!-- 表体寄存供应商handler -->
+	<bean id="cvmivenderidHandler" class="nc.ui.ic.m4y.handler.TransOutCvmivenderidHandler" />
+	<bean id="cdptvidHandler" class="nc.ui.ic.special.handler.CdptvidHandler" />
+	<bean id="cbizidHandler" class="nc.ui.ic.special.handler.CbizidHandler" />
+
+	<bean id="childCardEditHandlerMap" class="nc.ui.ic.pub.handler.card.ICCardEditEventHandlerMap">
+		<property name="handlerMap">
+			<map>
+				<entry key="cothercalbodyoid">
+					<ref bean="cothercalbodyoidHandlerFor4Y" />
+				</entry>
+				<entry key="cotherwhid">
+					<ref bean="cotherwhidHandlerFor4Y" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 界面元素 ########################################################### -->
+	<bean id="container" class="nc.ui.uif2.TangramContainer"
+		init-method="initUI">
+		<property name="tangramLayoutRoot" ref="vsnodequery" />
+		<property name="model" ref="icBizModel" />
+	</bean>
+	<!--卡控件 -->
+	<bean id="card" class="nc.ui.ic.m4y.view.TransOutBizView"
+		init-method="initUI">
+		<property name="model" ref="icBizModel" />
+		<!-- <property name="onHandPane" ref="ohandcard" />-->
+		<property name="barCodeInputPanel" ref="barcodecard" />
+		<property name="templateContainer" ref="templateContainer" />
+		<property name="tangramContainer" ref="container" />
+		<property name="userdefitemPreparator" ref="userdefAndMarAsstCardPreparator" />
+		<property name="autoAddLine" value="true" />
+		<property name="templateNotNullValidate" value="true" />
+		<!-- 空行过滤器，卡片界面根据此过滤器删除表体空行 -->
+		<property name="blankChildrenFilter">
+			<!-- 简单的根据一个字段是否为空的空行过滤器，因为多数情况下都是判断存货是否为空来过滤空行 -->
+			<bean
+				class="nc.ui.pubapp.uif2app.view.value.SingleFieldBlankChildrenFilter">
+				<!-- 指定用来判断空行的字段名称，可能多数情况下是存货字段 -->
+				<property name="fieldName" value="cmaterialvid" />
+			</bean>
+		</property>
+		<property name="bodyLineActions">
+			<list>
+				<ref bean="bodyAddLineAction" />
+				<ref bean="bodyInsertLineAction" />
+				<ref bean="bodyDelLineAction" />
+				<ref bean="bodyCopyLineAction" />
+				<ref bean="bodyPasteLineAction" />
+				<ref bean="bodyPasteToTailAction" />
+				<bean class="nc.ui.pub.beans.ActionsBar$ActionsBarSeparator" />
+				<ref bean="rearrangeRowNoBodyLineAction" />
+				<ref bean="bodyLineEditAction" />
+				<bean class="nc.ui.pub.beans.ActionsBar$ActionsBarSeparator" />
+				<bean class="nc.ui.pubapp.uif2app.actions.DefaultBodyZoomAction">
+					<property name="pos" value="1" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<!-- 签字按钮 -->
+	<bean id="signAction" class="nc.ui.ic.m4y.action.TransOutSignAction">
+		<property name="model" ref="icBizModel" />
+		<property name="actionName" value="SIGN" />
+		<property name="filledUpInFlow" value="false" />
+		<property name="editor" ref="card" />
+		<property name="billForm" ref="card" />
+		<property name="listView" ref="list" />
+	</bean>
+	<bean id="list" class="nc.ui.ic.m4y.view.TransOutBizBillListView"
+		init-method="initUI">
+		<property name="model" ref="icBizModel" />
+		<property name="multiSelectionMode" value="0" />
+		<property name="templateContainer" ref="templateContainer" />
+		<property name="userdefitemListPreparator" ref="userdefAndMarAsstListPreparator" />
+		<property name="paginationBar" ref="pageBar"/>	
+	</bean>
+	<!-- 保存按钮 -->
+	<bean id="saveAction" class="nc.ui.ic.m4y.action.TransOutSaveAction">
+		<property name="model" ref="icBizModel" />
+		<property name="editorModel" ref="icBizEditorModel" />
+		<property name="editor" ref="card" />
+		<property name="actionName" value="WRITE" />
+		<property name="validationService" ref="validateService" />
+	</bean>
+	<!-- "新增"下拉菜单的信息加载bean -->
+	<bean id="pfAddInfoLoader" class="nc.ui.pubapp.uif2app.actions.PfAddInfoLoader">
+		<property name="billType" value="4Y" />
+		<property name="model" ref="icBizModel" />
+	</bean>
+
+	<!-- 新增菜单 -->
+	<bean id="addMenu" class="nc.ui.pubapp.uif2app.actions.AddMenuAction"
+		init-method="initUI">
+		<property name="actions">
+			<list>
+				<!-- 参照调拨订单新增 -->
+				<bean id="addFrom5XAction" class="nc.ui.ic.m4y.action.AddFrom5XAction">
+					<property name="sourceBillType" value="5X" />
+					<property name="sourceBillName">
+						<bean class="nc.ui.uif2.I18nFB">
+							<property name="resDir" value="4008001_0" />
+							<property name="resId" value="04008001-0501" />
+							<property name="defaultValue" value="调拨订单" />
+						</bean>
+					</property>
+					<property name="destBillType" value="4Y" />
+					<property name="editorModel" ref="icBizEditorModel" />
+					<property name="transferViewProcessor" ref="transferViewProcessor" />
+					<property name="pfButtonClickContext" value="2" />
+				</bean>
+				<!-- 参照发货单新增 -->
+				<bean id="addFrom4331Action" class="nc.ui.ic.m4y.action.AddFrom4331Action">
+					<property name="sourceBillType" value="4331" />
+					<property name="sourceBillName">
+						<bean class="nc.ui.uif2.I18nFB">
+							<property name="resDir" value="funcode" />
+							<property name="resId" value="btn_40080802_Ref4331" />
+							<property name="defaultValue" value="发货单" />
+						</bean>
+					</property>
+					<property name="destBillType" value="4Y" />
+					<property name="editorModel" ref="icBizEditorModel" />
+					<property name="transferViewProcessor" ref="transferViewProcessor" />
+					<property name="pfButtonClickContext" value="2" />
+				</bean>
+			</list>
+		</property>
+		<property name="tooltip">
+			<bean class="nc.ui.uif2.I18nFB">
+				<property name="resDir" value="4008001_0" />
+				<property name="resId" value="04008001-0739" />
+				<property name="defaultValue" value="新增" />
+			</bean>
+		</property>
+		<property name="billType" value="4Y" />
+		<property name="model" ref="icBizModel" />
+		<property name="pfAddInfoLoader" ref="pfAddInfoLoader"></property>
+	</bean>
+	<!-- 退回 -->
+	<bean id="returnAction" class="nc.ui.ic.m4y.action.TransOutReturnAction">
+		<property name="model" ref="icBizModel" />
+		<property name="editorModel" ref="icBizEditorModel" />
+		<property name="editor" ref="card" />
+	</bean>
+	<!-- 复制 -->
+	<bean id="copyAction" class="nc.ui.ic.m4y.action.TransOutCopyAction">
+		<property name="model" ref="icBizModel" />
+		<property name="editorModel" ref="icBizEditorModel" />
+		<property name="editor" ref="card" />
+	</bean>
+	<!-- 入库单关联功能管理动作（浏览状态下） -->
+	<bean id="assistantFunctionBrowseAction_IN" class="nc.funcnode.ui.action.MenuAction">
+		<property name="code">
+			<value>NastMngBrowseAction</value>
+		</property>
+		<property name="name">
+			<bean class="nc.ui.uif2.I18nFB">
+				<property name="resDir" value="4008001_0" />
+				<property name="resId" value="04008001-0741" />
+				<property name="defaultValue" value="辅助功能" />
+			</bean>
+		</property>
+		<property name="tooltip">
+			<bean class="nc.ui.uif2.I18nFB">
+				<property name="resDir" value="4008001_0" />
+				<property name="resId" value="04008001-0786" />
+				<property name="defaultValue" value="辅助功能(Shift+B)" />
+			</bean>
+		</property>
+		<property name="actions">
+			<list>
+				<ref bean="returnAction" />
+				<ref bean="attachMentMngAction" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 入库单关联功能管理动作（编辑状态下） -->
+	<bean id="assistantFunctionEditAction_IN" class="nc.funcnode.ui.action.MenuAction">
+		<property name="code">
+			<value>NastMngEditAction</value>
+		</property>
+		<property name="name">
+			<bean class="nc.ui.uif2.I18nFB">
+				<property name="resDir" value="4008001_0" />
+				<property name="resId" value="04008001-0741" />
+				<property name="defaultValue" value="辅助功能" />
+			</bean>
+		</property>
+		<property name="actions">
+			<list>
+				<ref bean="displayOrhideAction" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 打印菜单 -->
+	<bean id="printMngAction" class="nc.funcnode.ui.action.GroupAction">
+		<property name="code">
+			<value>printMngAction</value>
+		</property>
+		<property name="actions">
+			<list>
+				<ref bean="templatePrintAction" />
+				<ref bean="templatePreviewAction" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<ref bean="printQAAction" />
+				<ref bean="mergerShowAction" />
+				<ref bean="printLocAction" />
+				<ref bean="printCountQueryAction" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 打印次数查询 -->
+	<bean id="printCountQueryAction" class="nc.ui.ic.pub.action.ICPrintCountQueryAction">
+	<!-- 单据日期属性名称 -->
+	    <property name="billdateFieldName" value=""/>
+	    <property name="model" ref="icBizModel" />
+	</bean>
+
+
+	<!-- 内部交易信息维护 -->
+	<bean id="toInfoEditAction" class="nc.ui.ic.m4y.action.ToInfoEditAction">
+		<property name="editorModel" ref="icBizEditorModel" />
+		<property name="model" ref="icBizModel" />
+	</bean>
+
+	<!-- 运输状态查询 -->
+	<bean id="transStatueQryAction" class="nc.ui.ic.m4y.action.TransStatueQryAction">
+		<property name="model" ref="icBizModel" />
+	</bean>
+
+	<!-- 联查动作菜单(浏览状态) -->
+	<bean id="linkQryBrowseGroupAction" class="nc.funcnode.ui.action.MenuAction">
+		<property name="code">
+			<value>linkQryAction</value>
+		</property>
+		<property name="name">
+			<bean class="nc.ui.uif2.I18nFB">
+				<property name="resDir" value="4008001_0" />
+				<property name="resId" value="04008001-0742" />
+				<property name="defaultValue" value="联查" />
+			</bean>
+		</property>
+		<property name="tooltip">
+			<bean class="nc.ui.uif2.I18nFB">
+				<property name="resDir" value="4008001_0" />
+				<property name="resId" value="04008001-0781" />
+				<property name="defaultValue" value="联查(Ctrl+K)" />
+			</bean>
+		</property>
+		<property name="actions">
+			<list>
+				<ref bean="linkQryAction" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<ref bean="displayOrhideAction" />
+				<ref bean="setPieceAtion" />
+				<ref bean="transStatueQryAction" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="linkQryEditGroupAction" class="nc.funcnode.ui.action.MenuAction">
+		<property name="code">
+			<value>linkQryAction</value>
+		</property>
+		<property name="name">
+			<bean class="nc.ui.uif2.I18nFB">
+				<property name="resDir" value="4008001_0" />
+				<property name="resId" value="04008001-0742" />
+				<property name="defaultValue" value="联查" />
+			</bean>
+		</property>
+		<property name="tooltip">
+			<bean class="nc.ui.uif2.I18nFB">
+				<property name="resDir" value="4008001_0" />
+				<property name="resId" value="04008001-0790" />
+				<property name="defaultValue" value="联查(Ctrl+L)" />
+			</bean>
+		</property>
+		<property name="actions">
+			<list>
+				<ref bean="displayOrhideAction" />
+				<ref bean="setPieceAtion" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 此bean不是必须的，如果没有各个界面按钮的差异，可以将一下三个bean都去掉 -->
+	<bean id="toftpanelActionContributors" class="nc.ui.uif2.actions.ActionContributors">
+		<property name="contributors">
+			<list>
+				<ref bean="actionsOfList" />
+				<ref bean="actionsOfCard" />
+			</list>
+		</property>
+	</bean>
+	<!-- 构造方法中传入的界面显示时，配置的Action才可见 -->
+	<bean id="actionsOfList" class="nc.ui.uif2.actions.StandAloneToftPanelActionContainer">
+		<constructor-arg ref="list" />
+		<!-- 可以配置非编辑状态下和编辑状态下分别可见的Action，没有此需求时可以配置得一样 -->
+		<property name="actions">
+			<list>
+				<ref bean="addMenu" />
+				<ref bean="editAction" />
+				<ref bean="deleteAction" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 查询 -->
+				<ref bean="queryAction" />
+				<!-- 刷新 -->
+				<ref bean="refreshAction" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 维护 -->
+				<ref bean="maintainMenu" />
+				<!-- 内部交易信息维护 -->
+				<ref bean="toInfoEditAction" />
+				<!-- 签字按钮组 -->
+				<ref bean="signActionMenu" />
+				<!-- 关联功能 -->
+				<ref bean="assistantFunctionBrowseAction_IN" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 联查 -->
+				<ref bean="linkQryBrowseGroupAction" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 导入导出 -->
+				<ref bean="importExportAction" />
+				<!-- 打印 -->
+				<ref bean="printMngAction" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 构造方法中传入的界面显示时，配置的Action才可见 -->
+	<bean id="actionsOfCard" class="nc.ui.uif2.actions.StandAloneToftPanelActionContainer">
+		<constructor-arg ref="card" />
+		<property name="model" ref="icBizModel" />
+		<!-- 可以配置非编辑状态下和编辑状态下分别可见的Action，没有此需求时可以配置得一样 -->
+		<property name="actions">
+			<list>
+				<ref bean="addMenu" />
+				<ref bean="editAction" />
+				<ref bean="deleteAction" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 查询 -->
+				<ref bean="queryAction" />
+				<!-- 刷新 -->
+				<ref bean="refreshCardAction" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 维护 -->
+				<ref bean="maintainMenu" />
+				<!-- 内部交易信息维护 -->
+				<ref bean="toInfoEditAction" />
+				<!-- 签字按钮组 -->
+				<ref bean="signActionMenu" />
+				<!-- 关联功能 -->
+				<ref bean="assistantFunctionBrowseAction_IN" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 联查 -->
+				<ref bean="linkQryBrowseGroupAction" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 导入导出 -->
+				<ref bean="importExportAction" />
+				<!-- 打印 -->
+				<ref bean="printMngAction" />
+			</list>
+		</property>
+		<property name="editActions">
+			<list>
+				<ref bean="saveAction" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 取消 -->
+				<ref bean="cancelAction" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 自动取数 -->
+				<ref bean="fetchAutoAction" />
+				<!-- 自动拣货 -->
+				<ref bean="pickAutoAction" />
+				   <!-- 按生产日期拣货 -->
+                <ref bean="manufacturedatepickautoaction" />
+				<!-- 维护 -->
+				<ref bean="maintainMenu" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 联查 -->
+				<ref bean="linkQryEditGroupAction" />
+				<bean class="nc.funcnode.ui.action.SeparatorAction" />
+				<!-- 导入导出 -->
+				<ref bean="importExportAction" />
+			</list>
+		</property>
+	</bean>
+	<!-- 消息中心数据监听 -->
+	<bean name="InitDataListener"
+		class="nc.ui.pubapp.uif2app.model.DefaultFuncNodeInitDataListener">
+		<property name="model" ref="icBizModel"></property>
+		<property name="queryAction" ref="queryAction" />
+		<!-- VO的类名 -->
+		<property name="voClassName" value="nc.vo.ic.m4y.entity.TransOutVO" />
+		<!-- 打开节点节点后要显示的界面 -->
+		<property name="autoShowUpComponent" ref="card" />
+		<property name="processorMap">
+			<map>
+				<entry>
+					<key>
+						<value>40</value>
+					</key>
+					<!-- 预算联查 -->
+					<bean class="nc.ui.ic.general.view.NtbInitProcessor">
+						<property name="model" ref="icBizModel" />
+						<property name="queryArea" ref="queryArea" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean name="outLinkQuery" class="nc.ui.ic.outbound.bizcheck.OutLinkQuery">
+		<property name="voClassName" value="nc.vo.ic.m4y.entity.TransOutVO" />
+		<property name="model" ref="icBizModel" />
+	</bean>
+
+	<!--	转单后公共代码处理 -转单精度处理-精度控制  -->
+    <bean id="scalePrcStrategy" class="nc.ui.ic.m4y.deal.TransOutBillScaleProcessor">
+    </bean>
+</beans>

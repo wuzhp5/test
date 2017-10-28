@@ -1,0 +1,10 @@
+1501146131305	Delete element
+1501156897716	Rename type 'ContractInnerCreditBillMeta'
+1501161579435	Encapsulate field 'crowno'
+1501161624036	Encapsulate field 'rowno'
+1501223019162	Encapsulate field 'iswinner'
+1501223687805	Rename type 'BididngAction'
+1501224065074	Encapsulate field 'model'
+1501224319006	Encapsulate field 'editor'
+1501229707640	Encapsulate field 'iswinner'
+1501320654090	Rename type 'SaleOrderReviseServiceTest'

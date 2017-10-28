@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+	<public>
+		<!--月结数据维护-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.mobalance.IMonthMaintain</interface>
+			<implementation>nc.impl.ic.mobalance.service.MonthMaintainImpl</implementation>
+		</component>
+		<!--月结数据查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.mobalance.IMonthQuery</interface>
+			<implementation>nc.impl.ic.mobalance.service.MonthQueryImpl</implementation>
+		</component>
+
+		<!--月结补单服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.mobalance.IMonthSupplement</interface>
+			<implementation>nc.impl.ic.mobalance.service.MonthSupplementImpl</implementation>
+		</component>
+		<!--月结加锁服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.mobalance.IMonthLock</interface>
+			<implementation>nc.impl.ic.mobalance.service.MonthLockImpl</implementation>
+		</component>
+		<!--月结V63升级服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.mobalance.upgrade.IMobalanceUpgradeV63</interface>
+			<implementation>nc.impl.ic.mobalance.upgrade.MobalanceUpgradeV63Impl</implementation>
+		</component>
+	</public>
+</module>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="true" key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE"/>
+		<item value="450" key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_WIDTH"/>
+		<item value="false" key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION"/>
+		<item value="576" key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_HEIGHT"/>
+		<list key="orderedProviders">
+		</list>
+		<list key="textArray">
+		</list>
+		<list key="orderedElements">
+		</list>
+		<list key="textEntries">
+		</list>
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+		<item value="105" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="InstallationDialogSettings">
+		<item value="706" key="DIALOG_WIDTH"/>
+		<item value="-130" key="DIALOG_Y_ORIGIN"/>
+		<item value="728" key="DIALOG_HEIGHT"/>
+		<item value="-58" key="DIALOG_X_ORIGIN"/>
+		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="nc.uap.mde.NewBCProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="nc.uap.mde.newWizards"/>
+		</list>
+	</section>
+	<section name="ShowViewDialog">
+		<item value="345" key="DIALOG_WIDTH"/>
+		<item value="org.eclipse.debug.ui.ModuleView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="114" key="DIALOG_Y_ORIGIN"/>
+		<item value="858" key="DIALOG_X_ORIGIN"/>
+		<item value="451" key="DIALOG_HEIGHT"/>
+		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui"/>
+			<item value="org.eclipse.ant.ui.views"/>
+			<item value="org.eclipse.pde.api.tools.ui.views.apitooling.view.category"/>
+			<item value="org.eclipse.team.ccvs.ui"/>
+			<item value="org.eclipse.debug.ui"/>
+			<item value="nc.uap.mde"/>
+			<item value="org.eclipse.jst.ws.jwst.ui"/>
+			<item value="org.eclipse.wst.xml"/>
+			<item value="org.eclipse.ui.internal.otherCategory"/>
+		</list>
+	</section>
+	<section name="EditorSelectionDialog">
+		<item value="false" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item value="com.yonyou.uapstudio.patch.wizard1" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.egit.ui.internal.clone.gitclonecategory"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Other"/>
+		</list>
+	</section>
+</section>

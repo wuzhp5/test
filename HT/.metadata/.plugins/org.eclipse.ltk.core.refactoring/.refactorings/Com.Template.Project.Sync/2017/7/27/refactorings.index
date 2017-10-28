@@ -1,0 +1,22 @@
+1499393419178	Delete element
+1499393905609	Rename resource '二开注册脚本.txt'
+1499394212995	Rename type 'SendInfo2Pfxx'
+1499395436066	Rename type 'JSONUtil'
+1499395672569	Rename type 'TemplateXMLUtil'
+1499395683643	Rename type 'XML_Translator'
+1499395943809	Rename type 'TransmitData'
+1499396247760	Rename type 'ProcessPubBill2Pfxx'
+1499397595378	Infer generic type arguments
+1499406080661	Rename type 'SaleOutSyncBeforeRule'
+1499406108242	Delete elements
+1499407137155	Rename type 'CalSaleOutBeforeRule'
+1499407233825	Rename type 'PullBillBeforeRule'
+1499412697664	Rename type 'PfxxServiceBaseInfo'
+1499412884417	Rename type 'FieldOfVO'
+1499412924269	Rename type 'FieldsClassEntity'
+1499415040620	Move compilation unit
+1499415044910	Delete element
+1499415089433	Rename type 'QuerySchema'
+1499419857463	Delete element
+1499420088541	Rename type 'JunitPlugin'
+1499420147013	Rename type 'JuitPlugin'

@@ -1,0 +1,14 @@
+package nc.ui.uapbd.supcalendar.ace.afteredit.listener;
+
+import nc.ui.pu.pub.editor.card.listener.ICardBodyAfterEditEventListener;
+import nc.ui.pubapp.uif2app.event.card.CardBodyAfterEditEvent;
+
+@SuppressWarnings("restriction")
+public class MaterialListener implements ICardBodyAfterEditEventListener{
+
+	@Override
+	public void afterEdit(CardBodyAfterEditEvent event) {
+		
+	}
+
+}

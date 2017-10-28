@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+  	<public>
+  		 <!--现存量更新-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.onhand.IOnhandUpdate</interface>
+	      	<implementation>nc.bs.ic.onhand.action.OnhandImpl</implementation>
+	     </component>
+	     <!--预留冻结现存量更新-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.onhand.IOnhandReseve</interface>
+	      	<implementation>nc.impl.ic.onhand.service.OnhandReserveImpl</implementation>
+	     </component>
+	     <!--现存量查询-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.onhand.IOnhandQry</interface>
+	      	<implementation>nc.impl.ic.onhand.service.OnhandQueryImpl</implementation>
+	     </component>
+	     <!--C-运算供给查询存量字段-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.onhand.mmpps.mpm.IQryOnhandMapForCalc</interface>
+	      	<implementation>nc.pubimpl.ic.onhand.mmpps.mpm.QryOnhandMapForCalcImpl</implementation>
+	     </component>
+	     <!--IC-齐套分析查询供给-存量字段映射-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.onhand.mm.seta.IQryOnhandMapForSeta</interface>
+	      	<implementation>nc.pubimpl.ic.onhand.mm.seta.QryOnhandMapForSetaImpl</implementation>
+	     </component>
+	     <!--货位存量分布查询-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.onhand.IOnhandLocQry</interface>
+	      	<implementation>nc.impl.ic.onhand.service.OnhandLocQueryImpl</implementation>
+	     </component>
+	     <!--现存量资源服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.onhand.OnhandResService</interface>
+	      	<implementation>nc.impl.ic.onhand.service.OnhandResServiceImpl</implementation>
+	     </component>
+	     <!--现存量资源对外服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.onhand.IOnhandResPubService</interface>
+	      	<implementation>nc.pubimpl.ic.onhand.OnhandResPubServiceImpl</implementation>
+	     </component>
+	     <!--现存量为库存状态调整提供服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.onhand.IOnhandStateUpdate</interface>
+	      	<implementation>nc.impl.ic.onhand.service.OnhandStateUpdateImpl</implementation>
+	     </component>
+	      <!--现存量为借出单借入单回写提供更新借入借出量服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.onhand.IOnhandRet</interface>
+	      	<implementation>nc.impl.ic.onhand.service.OnhadRetImpl</implementation>
+	     </component>
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.onhand.IInvNumByDayAlert</interface>
+	      	<implementation>nc.impl.ic.onhand.service.InvNumByDayAlertImpl</implementation>
+	     </component>
+	     <!--现存量为KMD提供查询服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.onhand.mmdp.IOnhandQueryForKMD</interface>
+	      	<implementation>nc.pubimpl.ic.onhand.mmdp.OnhandQueryForKMDImpl</implementation>
+	     </component>
+	     <!--现存量为生产提供查询服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.onhand.mmpac.IOnhandQryForMMPAC</interface>
+	      	<implementation>nc.pubimpl.ic.onhand.mmpac.OnhandQryForMMPACImpl</implementation>
+	     </component>
+	     <!--现存量为电子采购提供查询服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.onhand.ec.IOnhandSumInfoQryForEC</interface>
+	      	<implementation>nc.pubimpl.ic.onhand.ec.OnhandSumInfoQryForECImpl</implementation>
+	     </component>
+	     <!--现存量升级服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.onhand.upgrade.IOnhandUpgrade</interface>
+	      	<implementation>nc.impl.ic.onhand.upgrade.OnhandUpgradeImpl</implementation>
+	     </component>
+	        <!--现存量升同步服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.onhand.syn.IOnhandSynchronize</interface>
+	      	<implementation>nc.pubimpl.ic.onhand.syn.OnhandSynchronizeImpl</implementation>
+	     </component>
+	        <!--ECA存量查询接口-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.onhand.eca.IOnhandQueryForECA</interface>
+	      	<implementation>nc.pubimpl.ic.onhand.eca.OnhandQueryForECAImpl</implementation>
+	     </component>
+		<!--现存量为服装行业提供查询服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.onhand.IOnhandQryForFZ</interface>
+	      	<implementation>nc.pubimpl.ic.onhand.OnhandQryForFZImpl</implementation>
+	     </component>
+  	</public>
+</module>

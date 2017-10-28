@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+	<public>
+		<!--库存报表查询条件后台处理接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.pub.IICRptQueryConditionProcess</interface>
+			<implementation>nc.pubimpl.ic.icreport.pub.ICRptQueryConditionProcessImpl</implementation>
+		</component>
+		<!--库存报表台账查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.account.IAccountReport</interface>
+			<implementation>nc.pubimpl.ic.icreport.account.AccountReportImpl</implementation>
+		</component>
+
+		<!--库存报表批次跟踪查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.batchtrace.IBatchTraceReport</interface>
+			<implementation>nc.pubimpl.ic.icreport.batchtrace.BatchTraceReportImpl</implementation>
+		</component>
+
+		<!--库存展望量查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.atp.IAtpReport</interface>
+			<implementation>nc.pubimpl.ic.icreport.atp.AtpReportImpl</implementation>
+		</component>
+
+		<!--库存供应商寄存查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.vmi.IVmiSumBizReport</interface>
+			<implementation>nc.pubimpl.ic.icreport.vmi.VmiSumBizReportImpl</implementation>
+		</component>
+		<!--库存库龄分析服务-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.icreport.stockage.IStockAgeService</interface>
+			<implementation>nc.pubimpl.ic.icreport.stockage.StockAgeServiceImpl</implementation>
+		</component>
+		<!--库龄报表查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.stockage.IStockAgeQuery</interface>
+			<implementation>nc.impl.ic.icreport.stockage.StockAgeQueryImpl</implementation>
+		</component>
+
+		<!--库龄收发存汇总查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.iogather.IIOGatherQuery</interface>
+			<implementation>nc.pubimpl.ic.icreport.iogather.IOGatherQueryImpl</implementation>
+		</component>
+		<!--本期收入和发出查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.icreport.term.ITermInOutService</interface>
+			<implementation>nc.pubimpl.ic.icreport.term.TermInOutServiceImpl</implementation>
+		</component>
+		<!--预算联查-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.icreport.tbb.INtbLinkQuery</interface>
+			<implementation>nc.pubimpl.ic.tbb.linkquery.NtbLinkQueryImpl</implementation>
+		</component>
+		<!--库存报表流水账查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.flow.IFlowRptQuery</interface>
+			<implementation>nc.pubimpl.ic.icreport.flow.FlowRptQueryImpl</implementation>
+		</component>
+		<!--出入库汇总-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.flow.IInOutSumBizReport</interface>
+			<implementation>nc.pubimpl.ic.icreport.flow.InOutSumBizReportImpl</implementation>
+		</component>
+		<!--货位已用容量查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.locationcardquery.IQryUserdLocNum</interface>
+			<implementation>
+				nc.pubimpl.ic.icreport.locationcardquery.var.QryUserdLocNumImpl
+			</implementation>
+		</component>
+		<!--跨国到达报表取数接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.icreport.mnreport.IPurAndTransInQueryForMN</interface>
+			<implementation>nc.pubimpl.ic.mnreport.PurAndTransInQueryForMNImpl</implementation>
+		</component>
+		<!--跨国发货报表取数接口-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.icreport.mnreport.ISaleAndTransOutQueryForMN</interface>
+			<implementation>nc.pubimpl.ic.mnreport.SaleAndTransOutQueryForMNImpl</implementation>
+		</component>
+		<!--安全库存分析-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.safestock.ISafeStockAnalysis</interface>
+			<implementation>nc.impl.ic.icreport.safestock.SafeStockAnalysisImpl</implementation>
+		</component>
+
+		<!--超储分析-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.overstock.IOverStockAnalyse</interface>
+			<implementation>nc.impl.ic.icreport.overstock.OverStockAnalyseReportImpl</implementation>
+		</component>
+
+		<!--短缺分析-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.shortstock.IShortStockAnalyse</interface>
+			<implementation>nc.impl.ic.icreport.shortstock.ShortStockAnalyseReportImpl</implementation>
+		</component>
+		<!--保质期分析 报表查询  -->	
+		<component  priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+		   <interface>nc.pubitf.ic.icreport.qualityday.IQualityDayQuery</interface>	
+		   <implementation>nc.impl.ic.icreport.qualityday.QualityDayQueryImpl</implementation>
+		</component>
+	   <!-- 日结存表 -->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.dayhand.IDayHandQuery</interface>
+			<implementation>nc.impl.ic.icreport.dayhand.DayHandQueryImpl</implementation>
+		</component>
+		<!--呆滞积压-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.inactivestock.IInactiveStock</interface>
+			<implementation>nc.impl.ic.icreport.inactivestock.InactiveStockImpl</implementation>
+		</component>
+		<!--物料库存分布统计 报表查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.icreport.invdistribute.IInvDistributeQuery</interface>
+			<implementation>nc.impl.ic.icreport.invdistribute.InvDistributeQueryImpl</implementation>
+		</component>
+		<!--核对存货明细账对账-->
+       <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+           <interface>nc.itf.ic.icreport.detailacc.IDetailAccReport</interface>
+           <implementation>nc.impl.ic.icreport.detailacc.DetailAccReportImpl</implementation>
+       </component>     
+       <!--收发存汇总日报表-->
+       <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+           <interface>nc.itf.ic.icreport.inoutgather.IInOutGatherByDay</interface>
+           <implementation>nc.pubimpl.ic.icreport.inoutgather.InOutGatherByDayImpl</implementation>
+       </component>  
+       <!--收发村汇总月报表-->
+       <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+           <interface>nc.itf.ic.icreport.inoutgather.IInOutGatherByMonth</interface>
+           <implementation>nc.pubimpl.ic.icreport.inoutgather.InOutGatherByMonthImpl</implementation>
+       </component>
+       <!--本期收入和发出查询（过滤红字）-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.icreport.term.ITermInOutByDateSqlService</interface>
+			<implementation>nc.pubimpl.ic.icreport.term.TermInOutByDateSqlServiceImpl</implementation>
+		</component>
+       <!--V61到V63升级处理-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.icreport.upgrade.IICReportUpgradeTo63</interface>
+			<implementation>nc.pubimpl.ic.icreport.upgrade.ICReportUpgradeTo63Impl</implementation>
+		</component>
+	</public>
+</module>

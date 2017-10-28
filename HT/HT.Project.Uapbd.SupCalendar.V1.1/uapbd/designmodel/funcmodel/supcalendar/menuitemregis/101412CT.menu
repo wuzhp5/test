@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gbk"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="menuItem" class="nc.pubapp.pade.funcmodel.vo.MenuItem"><property name="dr" value="0"/>
+<property name="funModelFilePath" value="uapbd/designmodel/funcmodel/supcalendar/funcregis/101412CT.menu"/>
+<property name="funcode" value="101412CT"/>
+<property name="ismenutype" value="false"/>
+<property name="menuitemcode" value="101412CT"/>
+<property name="menuitemname" value="供应商送货日历-集团"/>
+<property name="pk_menuitem" value="0001AA1000000004XEKR"/>
+<property name="resid" value="D101412CT"/>
+<property name="ts" value="2017-10-09 10:42:36"/>
+</bean>
+
+</beans>

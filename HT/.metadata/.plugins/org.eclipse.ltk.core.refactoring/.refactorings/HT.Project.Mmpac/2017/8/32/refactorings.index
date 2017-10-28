@@ -1,0 +1,28 @@
+1501997199084	Encapsulate field 'map'
+1501997218280	Rename type 'ParamsCache'
+1501998024800	Rename type 'CacheVO'
+1501998040533	Rename type 'DevelopmentCacheVO'
+1502010604489	Rename resource 'WordTemplate.upm'
+1502085064965	Rename resource '生产报告.xml'
+1502085070843	Delete elements
+1502085090478	Rename resource '材料出库.xml'
+1502085108863	Rename resource '调拨订单.xml'
+1502085584233	Rename package 'nc.sync.pubbill.gatheringbill'
+1502086484789	Rename type 'GatheringBillSyncPlugin'
+1502086495695	Rename type 'GatheringBillSyncService'
+1502089606444	Copy compilation unit
+1502089650095	Rename type 'WrBillSyncPlugin'
+1502090418806	Copy compilation unit
+1502090470546	Rename type 'TransBillSyncPlugin'
+1502090482682	Rename type 'TransBillSyncService'
+1502094154648	Rename type 'TransBillSyncPlugin'
+1502094163837	Rename type 'WrBillSyncPlugin'
+1502094179515	Rename type 'MaterialOutBillSyncPlugin'
+1502103385294	Delete element
+1502451377515	Copy compilation unit
+1502453978659	Rename type 'Map4Constrast'
+1502454661882	Delete element
+1502533665769	Rename package 'nc.bs.cache.constrast'
+1502533702241	Rename package 'nc.bs.cache.params'
+1502533732496	Rename type 'ConstrastCacheCenter'
+1502533746459	Rename type 'ParamsCacheCenter'

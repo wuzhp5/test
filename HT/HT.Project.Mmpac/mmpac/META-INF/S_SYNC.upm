@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SYNC_EJB">
+	<public>
+		<component priority="0" singleton="true" remote="true" tx="CMT"	supportAlias="true">
+			<interface>nc.itf.sync.param.ISyncParamService</interface>
+			<implementation>nc.impl.sync.param.SyncParamServiceImpl</implementation>
+		</component>
+		<component priority="0" singleton="true" remote="true" tx="CMT"	supportAlias="true">
+			<interface>nc.itf.sync.util.IUtilRequiresNew</interface>
+			<implementation>nc.impl.sync.util.UtilRequiresNewImpl</implementation>
+		</component>
+		<component priority="0" singleton="true" remote="true" tx="CMT"	supportAlias="true">
+			<interface>nc.itf.sync.log.ILogger</interface>
+			<implementation>nc.impl.sync.log.LoggerImpl</implementation>
+		</component>
+	</public> 
+</module>

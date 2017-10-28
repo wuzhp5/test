@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+  	<public>
+    	    <!--组装单维护-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4l.IAssemblyMaintain</interface>
+	      <implementation>nc.impl.ic.m4l.AssemblyMaintainImpl</implementation>
+	    </component>
+	    <!--组装单查询 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4l.IAssemblyQuery</interface>
+	      <implementation>nc.impl.ic.m4l.AssemblyQueryImpl</implementation>
+	    </component>
+	    
+	    <!--组装单查询是否成套件物料被引用 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.m4l.IAssemblySetQuery</interface>
+	      <implementation>nc.pubimpl.ic.m4l.AssemblySetQueryImpl</implementation>
+	    </component>
+	    
+	    <!--组装单弃审 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4l.IAssemblyApprove</interface>
+	      <implementation>nc.impl.ic.m4l.AssemblyApproveImpl</implementation>
+	    </component>
+	    <!--形态转换维护-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4n.ITransformMaitain</interface>
+	      <implementation>nc.impl.ic.m4n.TransformMaintainImpl</implementation>
+	    </component>
+	     <!--形态转换查询-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4n.ITransformQuery</interface>
+	      <implementation>nc.impl.ic.m4n.TransformQueryImpl</implementation>
+	    </component>
+	    <!--形态转换审批及弃审-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4n.ITransformApprove</interface>
+	      <implementation>nc.impl.ic.m4n.TransformApproveImpl</implementation>
+	    </component>
+           <!--拆卸单维护-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4m.ITeardownMaintain</interface>
+	      <implementation>nc.impl.ic.m4m.TeardownMaintainImpl</implementation>
+	    </component>
+	    <!--拆卸单查询 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4m.ITeardownQuery</interface>
+	      <implementation>nc.impl.ic.m4m.TeardownQueryImpl</implementation>
+	    </component>
+	    
+	    <!--拆卸单查询是否成套件物料被引用  -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.m4m.ITeardownSetQuery</interface>
+	      <implementation>nc.pubimpl.ic.m4m.TeardownSetQueryImpl</implementation>
+	    </component>
+	    
+           <!--组装单审核 弃审 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4m.ITeardownApprove</interface>
+	      <implementation>nc.impl.ic.m4m.TeardownApproveImpl</implementation>
+	    </component>
+	    
+	    <!--货位调整查询 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+				<interface>nc.itf.ic.m4q.ILocAdjustQuery</interface>
+				<implementation>nc.impl.ic.m4q.LocAdjustQueryImpl</implementation>
+		</component>
+			
+			<!--货位调整维护-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+				<interface>nc.itf.ic.m4q.ILocAdjustMaintain</interface>
+				<implementation>nc.impl.ic.m4q.LocAdjustMaintainImpl</implementation>
+		</component>
+	    
+		<!--库存状态调整  -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4460.IStateAdjustMaintain</interface>
+	      <implementation>nc.impl.ic.m4460.StateAdjustMaintainImpl</implementation>
+	    </component>
+	    	    
+	    <!--库存状态调整提供给质检接口  -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.m4460.IStateAdjustForQc</interface>
+	      <implementation>nc.pubimpl.ic.m4460.StateAdjustForQcImpl</implementation>
+	    </component>
+	</public>
+</module>
+

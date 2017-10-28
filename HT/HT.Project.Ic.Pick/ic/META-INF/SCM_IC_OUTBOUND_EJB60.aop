@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module priority="1025">
+    <aops>
+       <!--设备出库单 -->
+       <aspect class="nc.bs.aop.log.BusilogAspect"  component="nc.itf.ic.m4451.IAssetOutMaintain"/> 
+       <!--借出单 -->
+       <aspect class="nc.bs.aop.log.BusilogAspect"  component="nc.itf.ic.m4h.IBorrowOutMaintain"/> 
+		<!--报废出库单维护-->
+       <aspect class="nc.bs.aop.log.BusilogAspect"  component="nc.itf.ic.m4o.IDiscardOutMaintain"/> 
+       <!--普通出库单维护-->
+       <aspect class="nc.bs.aop.log.BusilogAspect"  component="nc.itf.ic.m4i.IGeneralOutMaintain"/> 
+       <!--材料出库维护-->
+       <aspect class="nc.bs.aop.log.BusilogAspect"  component="nc.itf.ic.m4d.IMaterialOutMaintain"/> 
+       <!--借入还回单维护-->
+       <aspect class="nc.bs.aop.log.BusilogAspect"  component="nc.itf.ic.m4j.IReturnOutMaintain"/> 
+       <!--销售出库库单维护-->
+       <aspect class="nc.bs.aop.log.BusilogAspect"  component="nc.itf.ic.m4c.self.ISaleOutMaintain"/> 
+       <!-- 出库申请单维护接口  -->
+       <aspect class="nc.bs.aop.log.BusilogAspect"  component="nc.itf.ic.m4455.self.ISapplyBillMaintain"/> 
+       <!--调拨出库单维护-->
+       <aspect class="nc.bs.aop.log.BusilogAspect"  component="nc.itf.ic.m4y.ITransOutMaintain"/> 
+       <!--废品处理出库单维护-->
+       <aspect class="nc.bs.aop.log.BusilogAspect"  component="nc.itf.ic.m4p.IWasterProcessMaintain"/> 
+    </aops>
+</module>
+
+

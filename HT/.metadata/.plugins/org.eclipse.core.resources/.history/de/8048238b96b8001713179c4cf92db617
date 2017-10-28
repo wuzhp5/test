@@ -1,0 +1,15 @@
+package nc.ui.uapbd.supcalendar.ace.serviceproxy;
+
+public class LinkDataServiceProxy {
+
+	public String querySourceByPk(String pk_group, String pk_org,String pk_material){
+		
+		return null;
+	}
+	
+	public String queryPurchaseorgVesion(String pk_group, String pk_purchaseorg){
+		
+		return null;
+	}
+	
+}

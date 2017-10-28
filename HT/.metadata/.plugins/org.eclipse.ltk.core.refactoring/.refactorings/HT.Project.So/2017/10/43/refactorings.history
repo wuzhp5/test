@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;HT.Project.So&apos;&#x0D;&#x0A;- Original project: &apos;HT.Project.So&apos;&#x0D;&#x0A;- Original element: &apos;HT.Project.So/so/src/test/nc.vo.uapbd.supcalendar&apos;" description="Delete element" element1="/so\/src\/test&lt;nc.vo.uapbd.supcalendar" element2="/so\/src\/test&lt;nc.vo.uapbd" element3="/so\/src\/test&lt;nc.vo" element4="/so\/src\/test&lt;nc" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1508894209664" subPackages="false" version="1.0"/>
+</session>

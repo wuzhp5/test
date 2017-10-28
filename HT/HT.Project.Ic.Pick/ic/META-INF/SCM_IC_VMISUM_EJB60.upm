@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+  	<public>
+    	    <!--消耗汇总单维护服务-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m50.IVmiSumMaintain</interface>
+	      <implementation>nc.impl.ic.m50.VmiSumMaintainImpl</implementation>
+	    </component>
+    	    <!--消耗汇总单查询服务-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m50.IVmiSumQueryService</interface>
+	      <implementation>nc.impl.ic.m50.VmiSumQueryServiceImpl</implementation>
+	    </component>
+    	    <!--消耗汇总单审批服务-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m50.IVmiSumApprove</interface>
+	      <implementation>nc.impl.ic.m50.VmiSumAppoveImpl</implementation>
+	    </component>
+    	    <!--提供给采购发票查询消耗消耗汇总单的查询服务-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.m50.m25.IVmiSumQueryFor25</interface>
+	      <implementation>nc.pubimpl.ic.m50.m25.VmiSumQueryFor25Impl</implementation>
+	    </component>
+    	    <!--提供给采购发票回写消耗汇总单已开票数量的服务-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.m50.m25.IRewrite50For25</interface>
+	      <implementation>nc.pubimpl.ic.m50.m25.Rewrite50For25Impl</implementation>
+	    </component>
+	    
+	    <!--提供给销售发票查询消耗消耗汇总单的查询服务-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.m50.m32.IVmiSumQueryFor32</interface>
+	      <implementation>nc.pubimpl.ic.m50.m32.VmiSumQueryFor32Impl</implementation>
+	    </component>
+	    
+	    <!--提供给电子采购查询消耗消耗汇总单的查询服务-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.m50.ec.IVMISumInfoQryForEC</interface>
+	      <implementation>nc.pubimpl.ic.m50.ec.VMISumInfoQryForECImpl</implementation>
+	    </component>
+	    
+	    <!--库存供应商寄存查询-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m50.report.IVmiSumBizQuery</interface>
+			<implementation>nc.pubimpl.ic.m50.report.VmiSumBizQuery</implementation>
+		</component>
+	</public>
+</module>

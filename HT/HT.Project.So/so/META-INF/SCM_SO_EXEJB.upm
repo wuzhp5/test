@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='gb2312'?>
+<module name="SCM_PU_EJB">
+	<!-- 采购订单查询API服务及实现 -->
+	<public>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.so.m30.api.ISaleOrderMaintain4Push</interface>
+			<implementation>nc.pubimpl.so.m30.api.SaleOrderMaintain4PushImpl</implementation>
+		</component>
+	</public>
+	<private>
+	</private>
+</module>

@@ -1,0 +1,3 @@
+##default userid and datasource for webservice
+groupid=;
+datasource=NC66;

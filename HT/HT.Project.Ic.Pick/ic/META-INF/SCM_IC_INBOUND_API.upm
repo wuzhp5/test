@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+	<public>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4a.api.IGeneralInQueryAPI</interface>
+			<implementation>nc.pubimpl.ic.m4a.api.GeneralInQueryAPIImpl</implementation>
+		</component>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m46.api.IProductInQueryAPI</interface>
+			<implementation>nc.pubimpl.ic.m46.api.ProductInQueryAPIImpl</implementation>
+		</component>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m45.api.IPurchaseInQueryAPI</interface>
+			<implementation>nc.pubimpl.ic.m45.api.PurchaseInQueryAPIImpl</implementation>
+		</component>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m4a.api.IGeneralInMaintainAPI</interface>
+			<implementation>nc.pubimpl.ic.m4a.api.GeneralInMaintainAPIImpl</implementation>
+		</component>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m46.api.IProductInMaintainAPI</interface>
+			<implementation>nc.pubimpl.ic.m46.api.ProductInMaintainAPIImpl</implementation>
+		</component>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.pubitf.ic.m45.api.IPurchaseInMaintainAPI</interface>
+			<implementation>nc.pubimpl.ic.m45.api.PurchaseInMaintainAPIImpl</implementation>
+		</component>
+	</public>
+</module>

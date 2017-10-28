@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+  	<public>
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.atp.api.IATPQueryAPI</interface>
+	      	<implementation>nc.pubimpl.ic.atp.api.ATPQueryAPIImpl</implementation>
+	     </component>
+  	</public>
+</module>

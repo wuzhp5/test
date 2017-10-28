@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+	<public> 
+	    <!--库存通用查询接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.query.ICommonQuery</interface>
+	      <implementation>nc.impl.ic.query.CommonQueryImpl</implementation>
+	    </component> 
+	    <!--库存普通出入库单通用接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.pub.GeneralCommonInterface</interface>
+	      <implementation>nc.pubimpl.ic.general.GeneralCommonInterfaceImpl</implementation>
+	    </component>
+	    <!--库存普通出入库单给质检接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.general.qc.IQueryGenInfoForQC</interface>
+	      <implementation>nc.pubimpl.ic.general.qc.QueryGenInfoForQCImpl</implementation>
+	    </component>
+	    <!--库存调整单通用接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.special.IRewriteSpecialForGeneral</interface>
+	      <implementation>nc.pubimpl.ic.special.RewriteSpecialForGeneralImpl</implementation>
+	    </component> 
+	    <!--库存货位单品信息查询接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.location.ICLocationQuery</interface>
+	      <implementation>nc.impl.ic.location.ICLocationQueryImpl</implementation>
+	    </component>	    
+	    <!--库存为存货核算提供回写成本接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.general.ia.IRewriteCostForIAService</interface>
+	      <implementation>nc.pubimpl.ic.general.ia.RewriteCostForIAImpl</implementation>
+	    </component> 
+	    
+	    <!--按库管员分单接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.split.ISplitBillByStoreAdmin</interface>
+	      <implementation>nc.pubimpl.ic.split.SplitBillByStoreAdminImpl</implementation>
+	    </component> 
+	    <!--利润中心查询 相关查询接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.query.ILiabilityQuery</interface>
+	      <implementation>nc.impl.ic.query.LiabilityQueryImpl</implementation>
+	    </component> 
+	    <!--VAT 相关查询接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.query.IVATDataQuery</interface>
+	      <implementation>nc.impl.ic.query.VATDataQueryImpl</implementation>
+	    </component> 
+	        <!--成本中心相关查询接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.query.ICostCenterQuery</interface>
+	      <implementation>nc.impl.ic.query.CostCenterQueryImpl</implementation>
+	    </component> 
+	    <!--库存聚合VO查询（根据SCheme筛选）接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.query.IBillQueryUseScheme</interface>
+	      <implementation>nc.pubimpl.query.BillQueryUseSchemeImpl</implementation>
+	    </component> 
+	    <!--存货核算关账检查，库存管理需要提供数据接口 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.general.ia.IQueryBeforeCloseAccountDataForIA</interface>
+	      <implementation>nc.pubimpl.ic.general.ia.QueryBeforeCloseAccountDataForIAImpl</implementation>
+	    </component> 
+	    <!--序列号升迁时处理65之前版本只有序列号没有序列号PK问题的接口 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.upgrade.IICUpgrade65ForSN</interface>
+	      <implementation>nc.pubimpl.ic.upgrade.ICUpgrade65ForSNImpl</implementation>
+	    </component> 
+	    <!--00-->
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<interface>nc.itf.ic.general.query.IICPageQuery</interface>
+			<implementation>nc.impl.ic.general.query.ICPageQueryImpl</implementation>
+		</component>
+	    
+	</public>
+</module>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+  	<public>
+    	<!--盘点单维护-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4r.IInvCountMaintain</interface>
+	      <implementation>nc.impl.ic.m4r.InvCountMaintainImpl</implementation>
+	    </component>
+	    
+    	<!--盘点单调整-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4r.IInvCountAdjust</interface>
+	      <implementation>nc.impl.ic.m4r.InvCountAdjustImpl</implementation>
+	    </component>
+	
+	    <!--盘点单取数-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4r.IInvCountOnhand</interface>
+	      <implementation>nc.impl.ic.m4r.InvCountOnhandImpl</implementation>
+	    </component>
+	    
+	    <!--盘点单审批-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.m4r.IInvCountApproveProcessOper</interface>
+	      <implementation>nc.impl.ic.m4r.InvCountApproveProcessOperImpl</implementation>
+	    </component>
+	</public>	
+</module>

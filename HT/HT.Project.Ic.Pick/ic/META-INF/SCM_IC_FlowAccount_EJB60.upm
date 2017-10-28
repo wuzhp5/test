@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+  	<public>
+  		<!--库存流水单据数据同步服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.flowaccount.FlowAccountService</interface>
+	      	<implementation>nc.impl.ic.flowaccount.service.FlowBillRecordImpl</implementation>
+	     </component>
+	     <!--库存流水帐查询服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.flowaccount.FlowAccountQuery</interface>
+	      	<implementation>nc.impl.ic.flowaccount.service.FlowAcountQueryImpl</implementation>
+	     </component>
+	     <!--转储-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.flowaccount.ITransStore</interface>
+	      	<implementation>nc.impl.ic.flowaccount.service.TransStoreImpl</implementation>
+	     </component>		
+	     <!--库存流水帐升级服务-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.flowaccount.upgrade.IFlowAccountUpgradeToV61</interface>
+	      	<implementation>nc.impl.ic.flowaccount.upgrade.FlowAccountUpgradeToV61Impl</implementation>
+	     </component>
+	     <!--库存流水帐升级服务V63-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.flowaccount.upgrade.IFlowAccountUpgradeToV63</interface>
+	      	<implementation>nc.impl.ic.flowaccount.upgrade.FlowAccountUpgradeToV63Impl</implementation>
+	     </component>
+  	</public>
+</module>

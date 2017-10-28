@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+	<public>   
+	    
+	    <!-- 出入库类型与库存状态关系设置 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.transtypetostate.ITransTypeToStateService</interface>
+	      <implementation>nc.impl.ic.transtypetostate.TransTypeToStateServiceImpl</implementation>
+	    </component>    
+	    
+	    <!-- 库存交易类型扩展参数查询服务 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.itf.ic.transtype.ITransTypeExtendQueryService</interface>
+	      <implementation>nc.impl.ic.transtype.TransTypeExtendImpl</implementation>
+	    </component> 	
+	    
+	    <!-- 库存出入库单的交易类型公共查询服务 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.transtype.IInOutTransTypeQueryService</interface>
+	      <implementation>nc.impl.ic.transtype.InOutTransTypeQueryServiceImpl</implementation>
+	    </component>     
+	    
+	    <!--  特殊单交易类型公共查询服务 -->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      <interface>nc.pubitf.ic.transtype.ISpecialTransTypeQueryService</interface>
+	      <implementation>nc.impl.ic.transtype.SpecialTransTypeQueryServiceImpl</implementation>
+	    </component> 
+	</public>
+</module>

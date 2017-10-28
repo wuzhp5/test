@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="SCM_IC_EJB60">
+  	<public>
+  		  <!-- 期初余额 维护操作接口-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.m40.IInitializtionInMaintain</interface>
+	      	<implementation>nc.impl.ic.m40.InitializtionInMaintainImpl</implementation>
+	     </component>	  
+	     
+	      <!-- 期初余额 查询接口-->
+	      <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.m40.IInitializtionInQuery</interface>
+	      	<implementation>nc.impl.ic.m40.InitializtionInQuery</implementation>
+	     </component>	
+	     
+	    <!--期初余额提供给消耗汇总单的回写接口-->
+	    <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.m40.m50.IRewrite40For50</interface>
+	      	<implementation>nc.pubimpl.ic.m40.m50.Rewrite40For50Impl</implementation>
+	    </component>
+	     
+
+	     
+	      <!-- 期初废品 维护操作接口-->
+	     <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.m43.IOpenScrapMaintain</interface>
+	      	<implementation>nc.impl.ic.m43.OpenScrapMaintainImpl</implementation>
+	     </component>	  
+	     
+	      <!-- 期初废品  查询接口-->
+	      <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.itf.ic.m43.IOpenScrapQuery</interface>
+	      	<implementation>nc.impl.ic.m43.OpenScrapQuery</implementation>
+	     </component>	
+	     
+	           <!-- 期初余额  为存货核算提供查询接口-->
+	      <component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+	      	<interface>nc.pubitf.ic.m40.mI0.IOpenBalForI0Query</interface>
+	      	<implementation>nc.pubimpl.ic.m40.mI0.OpenBalForI0QueryImpl</implementation>
+	     </component>	
+	     
+  	</public>
+</module>
