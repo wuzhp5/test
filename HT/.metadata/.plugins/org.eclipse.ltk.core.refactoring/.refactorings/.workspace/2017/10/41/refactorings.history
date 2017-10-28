@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename Java project &apos;HT.Project.Uapbd.SupCalendar&apos; to &apos;HT.Project.Uapbd.SupCalendar.V1.0&apos;&#x0D;&#x0A;- Original element: &apos;HT.Project.Uapbd.SupCalendar&apos;&#x0D;&#x0A;- Renamed element: &apos;HT.Project.Uapbd.SupCalendar&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;HT.Project.Uapbd.SupCalendar&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=HT.Project.Uapbd.SupCalendar" name="HT.Project.Uapbd.SupCalendar.V1.0" references="true" stamp="1507517541418" version="1.0"/>
-</session>

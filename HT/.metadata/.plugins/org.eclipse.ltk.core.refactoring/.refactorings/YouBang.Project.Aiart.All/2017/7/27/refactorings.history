@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;YouBang.Project.Aiart.All/META-INF/seal.upm&apos; to &apos;IPFBusiAction.upm&apos;" description="Rename resource &apos;seal.upm&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="META-INF/seal.upm" name="IPFBusiAction.upm" stamp="1499305425126" updateReferences="true"/>
-</session>

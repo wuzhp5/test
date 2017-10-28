@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;HT.Project.Pu&apos;&#x0D;&#x0A;- Original project: &apos;HT.Project.Pu&apos;&#x0D;&#x0A;- Original element: &apos;nc.ui.pu.m21.config.CoordinationRawAction.java&apos;" description="Delete element" element1="/pu\/src\/client&lt;nc.ui.pu.m21.config{CoordinationRawAction.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1506385708445" subPackages="false" version="1.0"/>
-</session>

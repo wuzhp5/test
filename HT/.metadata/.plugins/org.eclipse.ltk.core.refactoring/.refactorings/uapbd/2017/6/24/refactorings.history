@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename package &apos;nc.bs.java.cleint&apos; to &apos;nc.bs.java.client&apos;&#x0D;&#x0A;- Original project: &apos;uapbd&apos;&#x0D;&#x0A;- Original element: &apos;uapbd/uapbd/src/test/nc.bs.java.cleint&apos;&#x0D;&#x0A;- Renamed element: &apos;uapbd/uapbd/src/test/nc.bs.java.client&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;nc.bs.java.cleint&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/uapbd\/src\/test&lt;nc.bs.java.cleint" name="nc.bs.java.client" qualified="false" references="true" stamp="1497669551660" textual="false" version="1.0"/>
-</session>

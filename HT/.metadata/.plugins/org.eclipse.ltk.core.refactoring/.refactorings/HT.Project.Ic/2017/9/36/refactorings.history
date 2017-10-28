@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;HT.Project.Ic&apos;&#x0D;&#x0A;- Original project: &apos;HT.Project.Ic&apos;&#x0D;&#x0A;- Original element: &apos;HT.Project.Ic/ic/src/public/nc.bs.ic.general.upload&apos;" description="Delete element" element1="/ic\/src\/public&lt;nc.bs.ic.general.upload" element2="/ic\/src\/public&lt;nc.bs.ic.general" element3="/ic\/src\/public&lt;nc.bs.ic" element4="/ic\/src\/public&lt;nc.bs" element5="/ic\/src\/public&lt;nc" elements="5" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1504422224760" subPackages="false" version="1.0"/>
-</session>
